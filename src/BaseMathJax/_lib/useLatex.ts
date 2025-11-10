@@ -1,4 +1,4 @@
-import he from "he";
+import * as he from "he";
 import { convertLatexToMathMl } from "mathlive";
 
 export const useLatex = (latex: string) => {

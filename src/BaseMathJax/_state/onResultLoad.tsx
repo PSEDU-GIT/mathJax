@@ -1,8 +1,11 @@
-import { Dispatch, SetStateAction } from 'react';
+import type { Dispatch, SetStateAction } from "react";
 
-export const onResultLoad = (element: HTMLDivElement, setIsLoaded: Dispatch<SetStateAction<boolean>>) => {
+export const onResultLoad = (
+  element: HTMLDivElement,
+  setIsLoaded: Dispatch<SetStateAction<boolean>>,
+) => {
   const observer = new MutationObserver(() => {
-    const images = element.querySelectorAll('img');
+    const images = element.querySelectorAll("img");
     if (images && images.length > 0) {
       const promises = Array.from(images).map((image) => {
         return new Promise<void>((resolve, reject) => {
@@ -16,7 +19,7 @@ export const onResultLoad = (element: HTMLDivElement, setIsLoaded: Dispatch<SetS
 
       Promise.all(promises)
         .catch(() => {
-          console.error('Image loading error');
+          console.error("Image loading error");
         })
         .finally(() => setIsLoaded(true));
     } else {

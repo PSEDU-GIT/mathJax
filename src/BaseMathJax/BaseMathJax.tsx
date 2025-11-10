@@ -1,11 +1,11 @@
 import cx from "classnames";
 import { renderMathInElement } from "mathlive";
 import { useEffect, useRef, useState } from "react";
-import { makeGroup } from "./_state/makeGroup.ts";
-import { onResultLoad } from "./_state/onResultLoad.tsx";
-import { useLatex } from "./_lib/useLatex.ts";
-import { onStripOuterDivs } from "./_state/onStripOuterDivs.ts";
-import * as styles from "./index.css.ts";
+import { makeGroup } from "./_state/makeGroup";
+import { onResultLoad } from "./_state/onResultLoad";
+import { useLatex } from "./_lib/useLatex";
+import { onStripOuterDivs } from "./_state/onStripOuterDivs";
+import * as styles from "./baseMathJax.css";
 
 type Props = {
   content: string;
@@ -15,12 +15,12 @@ type Props = {
   onLoad?: (height: number[], element?: HTMLElement[]) => void;
 };
 
-export default function BaseMathJax({
+export const BaseMathJax = ({
   content,
   className,
   onLoad,
   questionIndex = 0,
-}: Props) {
+}: Props) => {
   const ref = useRef<HTMLDivElement | null>(null);
 
   const [isLoaded, setIsLoaded] = useState(false);
@@ -127,4 +127,6 @@ export default function BaseMathJax({
   }, [isLoaded]);
 
   return <div ref={ref} className={cx(className, styles.container)} />;
-}
+};
+
+export default BaseMathJax;
