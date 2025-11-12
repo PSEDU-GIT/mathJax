@@ -1,6 +1,6 @@
 {
   "name": "psedu-math",
-  "version": "1.0.31",
+  "version": "1.0.32",
   "type": "module",
   "main": "dist/index.cjs",
   "module": "dist/index.es.js",
@@ -21,8 +21,8 @@
     "dist/*.css"
   ],
   "peerDependencies": {
-    "react": "^18",
-    "react-dom": "^18"
+    "react": ">=18 <20",
+    "react-dom": ">=18 <20"
   },
   "scripts": {
     "dev": "vite",

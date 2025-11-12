@@ -5,29 +5,38 @@ export const makeGroup = (element: HTMLDivElement) => {
   const choiceGroup: HTMLElement[] = [];
 
   Array.from(element.children ?? []).forEach((div) => {
-    const text = div.textContent?.trim() || '';
+    const text = div.textContent?.trim() || "";
 
     if (choiceRegex.test(text)) choiceGroup.push(div as HTMLElement);
     else {
-      (div as HTMLElement).classList.add('question-title-group');
-      titleGroup.push(div as HTMLElement);
+      const el = div as HTMLElement;
+
+      el.classList.add("question-title-group");
+
+      if (el.style.textAlign === "justify") {
+        el.style.textAlign = "initial";
+      }
+
+      titleGroup.push(el);
     }
   });
 
   if (choiceGroup.length !== 5) return;
 
-  const choiceWrapper = document.createElement('div');
-  choiceWrapper.className = 'question-choice-group';
+  const choiceWrapper = document.createElement("div");
+  choiceWrapper.className = "question-choice-group";
   choiceGroup.forEach((el) => {
-    const firstTextNode = Array.from(el.childNodes).find((n) => n.nodeType === Node.TEXT_NODE && n.textContent?.trim());
+    const firstTextNode = Array.from(el.childNodes).find(
+      (n) => n.nodeType === Node.TEXT_NODE && n.textContent?.trim(),
+    );
     if (!firstTextNode) return;
 
     const textContent = firstTextNode.textContent!;
     const match = textContent.match(choiceRegex);
 
     if (match) {
-      const span = document.createElement('span');
-      span.className = 'choice-index';
+      const span = document.createElement("span");
+      span.className = "choice-index";
       span.textContent = match[0];
 
       // 첫 문자 이후 나머지 텍스트도 분리 보존
@@ -40,16 +49,18 @@ export const makeGroup = (element: HTMLDivElement) => {
 
     const children = Array.from(el.childNodes);
     const indexSpan = children.find(
-      (node) => node.nodeType === Node.ELEMENT_NODE && (node as HTMLElement).classList.contains('choice-index'),
+      (node) =>
+        node.nodeType === Node.ELEMENT_NODE &&
+        (node as HTMLElement).classList.contains("choice-index"),
     );
 
-    const wrapper = document.createElement('div');
+    const wrapper = document.createElement("div");
     children.forEach((child) => {
       if (child !== indexSpan) wrapper.appendChild(child);
     });
 
     if (indexSpan) {
-      el.innerHTML = '';
+      el.innerHTML = "";
       el.appendChild(indexSpan);
       el.appendChild(wrapper);
     }
@@ -57,7 +68,7 @@ export const makeGroup = (element: HTMLDivElement) => {
     choiceWrapper.appendChild(el);
   });
 
-  element.innerHTML = '';
+  element.innerHTML = "";
 
   titleGroup.forEach((el) => {
     element.appendChild(el);
