@@ -36,7 +36,6 @@ export const BaseMathJax = ({
       .replace(/<SPAN[^>]*>/gi, "")
       .replace(/<\/SPAN>/gi, "")
       .replaceAll("font-size", "")
-      .replaceAll("background-color", "")
       .replace(/<br[^>]*>/gi, "")
       .replaceAll(" black", " #aaa")
       .replaceAll("\\rightarrow", "→")

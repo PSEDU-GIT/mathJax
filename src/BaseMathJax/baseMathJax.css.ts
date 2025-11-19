@@ -16,13 +16,12 @@ export const mathGlobal: GlobalStyleRule = {
 };
 
 export const mathTable: CSSProperties = {
-  width: "auto !important",
   maxWidth: "100%",
   height: "auto !important",
 };
 
 export const mathTableTd: CSSProperties = {
-  padding: 5,
+  padding: 6,
 };
 
 export const mathImg: CSSProperties = {
@@ -33,8 +32,8 @@ export const mathImg: CSSProperties = {
 export const mathRect: CSSProperties = {
   maxWidth: "100%",
   height: "auto !important",
-  padding: 5,
-  borderRadius: 2,
+  padding: 6,
+  borderRadius: 4,
 };
 
 export const mathLatex: GlobalStyleRule = {
