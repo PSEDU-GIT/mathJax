@@ -43,11 +43,11 @@
 }
 
 .ML__small-delim {
-    font-family: KaTeX_Main
+    font-family: KaTeX_Main !important;
 }
 
 .ML__text {
-    font-family: var(--_text-font-family);
+    font-family: var(--_text-font-family) !important;
     white-space: pre
 }
 
@@ -57,112 +57,112 @@
 }
 
 .ML__mathit {
-    font-family: KaTeX_Math;
-    font-style: italic
+    font-family: KaTeX_Math !important;
+    font-style: italic !important
 }
 
 .ML__mathbf {
-    font-family: KaTeX_Main;
-    font-weight: 700
+    font-family: KaTeX_Main !important;
+    font-weight: 700 !important
 }
 
 .lcGreek.ML__mathbf {
     font-family: KaTeX_Math;
-    font-weight: 400
+    font-weight: 400 !important
 }
 
 .ML__mathbfit {
-    font-family: KaTeX_Math;
-    font-style: italic;
-    font-weight: 700
+    font-family: KaTeX_Math !important;
+    font-style: italic !important;
+    font-weight: 700 !important
 }
 
 .ML__ams, .ML__bb {
-    font-family: KaTeX_AMS
+    font-family: KaTeX_AMS !important
 }
 
 .ML__cal {
-    font-family: KaTeX_Caligraphic
+    font-family: KaTeX_Caligraphic !important
 }
 
 .ML__frak {
-    font-family: KaTeX_Fraktur
+    font-family: KaTeX_Fraktur !important
 }
 
 .ML__tt {
-    font-family: KaTeX_Typewriter
+    font-family: KaTeX_Typewriter !important
 }
 
 .ML__script {
-    font-family: KaTeX_Script
+    font-family: KaTeX_Script !important
 }
 
 .ML__sans {
-    font-family: KaTeX_SansSerif
+    font-family: KaTeX_SansSerif !important
 }
 
 .ML__series_el, .ML__series_ul {
-    font-weight: 100
+    font-weight: 100 !important
 }
 
 .ML__series_l {
-    font-weight: 200
+    font-weight: 200 !important
 }
 
 .ML__series_sl {
-    font-weight: 300
+    font-weight: 300 !important
 }
 
 .ML__series_sb {
-    font-weight: 500
+    font-weight: 500 !important
 }
 
 .ML__bold {
-    font-weight: 700
+    font-weight: 700 !important
 }
 
 .ML__series_eb {
-    font-weight: 800
+    font-weight: 800 !important
 }
 
 .ML__series_ub {
-    font-weight: 900
+    font-weight: 900 !important
 }
 
 .ML__series_uc {
-    font-stretch: ultra-condensed
+    font-stretch: ultra-condensed !important
 }
 
 .ML__series_ec {
-    font-stretch: extra-condensed
+    font-stretch: extra-condensed !important
 }
 
 .ML__series_c {
-    font-stretch: condensed
+    font-stretch: condensed !important
 }
 
 .ML__series_sc {
-    font-stretch: semi-condensed
+    font-stretch: semi-condensed !important
 }
 
 .ML__series_sx {
-    font-stretch: semi-expanded
+    font-stretch: semi-expanded !important
 }
 
 .ML__series_x {
-    font-stretch: expanded
+    font-stretch: expanded !important
 }
 
 .ML__series_ex {
-    font-stretch: extra-expanded
+    font-stretch: extra-expanded !important
 }
 
 .ML__series_ux {
-    font-stretch: ultra-expanded
+    font-stretch: ultra-expanded !important
 }
 
 .ML__it {
-    font-style: italic
+    font-style: italic !important
 }
 
 .ML__shape_ol {
@@ -172,11 +172,11 @@
 }
 
 .ML__shape_sc {
-    font-variant: small-caps
+    font-variant: small-caps !important
 }
 
 .ML__shape_sl {
-    font-style: oblique
+    font-style: oblique !important
 }
 
 .ML__emph {
@@ -271,31 +271,31 @@
 }
 
 .ML__delim-size1 {
-    font-family: KaTeX_Size1
+    font-family: KaTeX_Size1 !important
 }
 
 .ML__delim-size2 {
-    font-family: KaTeX_Size2
+    font-family: KaTeX_Size2 !important
 }
 
 .ML__delim-size3 {
-    font-family: KaTeX_Size3
+    font-family: KaTeX_Size3 !important
 }
 
 .ML__delim-size4 {
-    font-family: KaTeX_Size4
+    font-family: KaTeX_Size4 !important
 }
 
 .ML__delim-mult .delim-size1 > span {
-    font-family: KaTeX_Size1
+    font-family: KaTeX_Size1 !important
 }
 
 .ML__delim-mult .delim-size4 > span {
-    font-family: KaTeX_Size4
+    font-family: KaTeX_Size4 !important
 }
 
 .ML__accent-body > span {
-    font-family: KaTeX_Main;
+    font-family: KaTeX_Main !important;
     width: 0
 }
 
@@ -307,11 +307,11 @@
 .ML__latex {
     direction: ltr;
     display: inline-block;
-    font-family: KaTeX_Main, Times New Roman, serif;
-    font-size-adjust: none;
-    font-stretch: normal;
-    font-style: normal;
-    font-variant-caps: normal;
+    font-family: KaTeX_Main, Times New Roman, serif !important;
+    font-size-adjust: none !important;
+    font-stretch: normal !important;
+    font-style: normal !important;
+    font-variant-caps: normal !important;
     letter-spacing: normal;
     line-height: 1.2;
     text-align: left;
@@ -564,11 +564,11 @@
 }
 
 .ML__latex .ML__op-symbol.ML__small-op {
-    font-family: KaTeX_Size1
+    font-family: KaTeX_Size1 !important
 }
 
 .ML__latex .ML__op-symbol.ML__large-op {
-    font-family: KaTeX_Size2
+    font-family: KaTeX_Size2 !important
 }
 
 .ML__latex .ML__mtable .ML__vertical-separator {

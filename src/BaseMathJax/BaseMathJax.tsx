@@ -33,8 +33,8 @@ export const BaseMathJax = ({
     }
 
     const replaceContent = onStripOuterDivs(content)
-      .replace(/<SPAN[^>]*>/gi, "")
-      .replace(/<\/SPAN>/gi, "")
+      .replace(/<span(?![^>]*text-decoration\s*:\s*underline)[^>]*>/gi, "")
+      .replace(/<\/span>/gi, "")
       .replaceAll("font-size", "")
       .replace(/<br[^>]*>/gi, "")
       .replaceAll(" black", " #aaa")
