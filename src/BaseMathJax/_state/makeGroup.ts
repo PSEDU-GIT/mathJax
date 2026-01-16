@@ -4,21 +4,37 @@ export const makeGroup = (element: HTMLDivElement) => {
   const titleGroup: HTMLElement[] = [];
   const choiceGroup: HTMLElement[] = [];
 
-  Array.from(element.children ?? []).forEach((div) => {
-    const text = div.textContent?.trim() || "";
+  const children = Array.from(element.children ?? []) as HTMLElement[];
 
-    if (choiceRegex.test(text)) choiceGroup.push(div as HTMLElement);
-    else {
-      const el = div as HTMLElement;
+  let idx = children.length - 1;
+  const tailChoices: HTMLElement[] = [];
 
-      el.classList.add("question-title-group");
+  while (idx >= 0) {
+    const el = children[idx];
+    const text = el.textContent?.trim() || "";
 
-      if (el.style.textAlign === "justify") {
-        el.style.textAlign = "initial";
-      }
-
-      titleGroup.push(el);
+    if (choiceRegex.test(text)) {
+      tailChoices.push(el);
+      idx--;
+      continue;
     }
+    break;
+  }
+
+  tailChoices.reverse();
+
+  if (tailChoices.length >= 5) {
+    choiceGroup.push(...tailChoices);
+  }
+
+  const choiceSet = new Set(choiceGroup);
+  children.forEach((el) => {
+    if (choiceSet.has(el)) return;
+
+    el.classList.add("question-title-group");
+    if (el.style.textAlign === "justify") el.style.textAlign = "initial";
+
+    titleGroup.push(el);
   });
 
   if (choiceGroup.length !== 5) return;
@@ -39,7 +55,6 @@ export const makeGroup = (element: HTMLDivElement) => {
       span.className = "choice-index";
       span.textContent = match[0];
 
-      // 첫 문자 이후 나머지 텍스트도 분리 보존
       const rest = textContent.slice(match[0].length);
       const restNode = document.createTextNode(rest);
 
