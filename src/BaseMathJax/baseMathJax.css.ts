@@ -12,7 +12,9 @@ export const container = style({
 
 export const mathGlobal: GlobalStyleRule = {
   fontFamily:
-    "STIX Two Math, Cambria Math, Latin Modern Math, math_bjsc3, serif",
+    // "STIX Two Math, Cambria Math, Latin Modern Math, math_bjsc3, serif",
+
+    "STIX Two Math, Latin Modern Math, math_bjsc3, serif",
 };
 
 export const mathTable: CSSProperties = {
