@@ -22,10 +22,6 @@ export const mathTable: CSSProperties = {
   height: "auto !important",
 };
 
-export const mathTableTd: CSSProperties = {
-  padding: 6,
-};
-
 export const mathImg: CSSProperties = {
   maxWidth: "100%",
   height: "auto !important",
@@ -61,7 +57,6 @@ export const mathFracLine: CSSProperties = {
 
 globalStyle(`${container} *`, mathGlobal);
 globalStyle(`${container} table`, mathTable);
-globalStyle(`${container} table td:last-child`, mathTableTd);
 globalStyle(`${container} img`, mathImg);
 globalStyle(`${container} .RECT`, mathRect);
 globalStyle(`${container} .ML__latex`, mathLatex);

@@ -2,7 +2,6 @@ export { default } from "./BaseMathJax";
 export {
   mathGlobal,
   mathTable,
-  mathTableTd,
   mathImg,
   mathRect,
   mathLatex,
