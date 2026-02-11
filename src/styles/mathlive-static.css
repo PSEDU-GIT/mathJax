@@ -661,3 +661,7 @@
     transform: scale(1) translateY(3em);
     visibility: visible
 }
+
+.ML__mfrac {
+    font-size: 0.9em;
+}

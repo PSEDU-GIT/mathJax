@@ -11,20 +11,17 @@ export const container = style({
  */
 
 export const mathGlobal: GlobalStyleRule = {
-  fontFamily:
-    // "STIX Two Math, Cambria Math, Latin Modern Math, math_bjsc3, serif",
-
-    "STIX Two Math, Latin Modern Math, math_bjsc3, serif",
+  fontFamily: "STIX Two Math, Latin Modern Math, math_bjsc3, serif",
 };
 
 export const mathTable: CSSProperties = {
   maxWidth: "100%",
-  height: "auto !important",
+  height: "auto",
 };
 
 export const mathImg: CSSProperties = {
   maxWidth: "100%",
-  height: "auto !important",
+  height: "auto",
 };
 
 export const mathRect: CSSProperties = {
@@ -55,7 +52,7 @@ export const mathFracLine: CSSProperties = {
   minHeight: 0,
 };
 
-globalStyle(`${container} *`, mathGlobal);
+globalStyle(`${container}`, mathGlobal);
 globalStyle(`${container} table`, mathTable);
 globalStyle(`${container} img`, mathImg);
 globalStyle(`${container} .RECT`, mathRect);
@@ -81,7 +78,7 @@ export const questionChoiceGroup: CSSProperties = {
 export const questionChoiceGroupInner: CSSProperties = {
   flexShrink: 0,
   display: "flex",
-  alignItems: "start",
+  alignItems: "center",
   fontSize: 13,
   color: "#000 !important",
 };
@@ -107,10 +104,11 @@ export const titleGroup: GlobalStyleRule = {
   fontWeight: 300,
   fontSize: 12,
   color: "#000 !important",
+  letterSpacing: "0.2px !important",
 };
 
 export const titleGroupSub: GlobalStyleRule = {
-  margin: "0 4px",
+  margin: "0 2px",
 };
 
 export const titleGroupMath: GlobalStyleRule = {

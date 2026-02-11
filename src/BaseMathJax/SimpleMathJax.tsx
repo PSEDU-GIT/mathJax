@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import { onStripOuterDivs } from "./_state/onStripOuterDivs";
 import { useLatex } from "./_lib/useLatex";
 import { renderMathInElement } from "mathlive";
-import * as styles from "./baseMathJax.css";
+import * as styles from "./simpleMathJax.css";
 
 type Props = {
   content: string;

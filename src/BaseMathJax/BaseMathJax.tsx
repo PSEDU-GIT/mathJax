@@ -99,17 +99,26 @@ export const BaseMathJax = ({
 
       if (children.length === 0) return;
 
-      const maxWidth = Math.max(...children.map((el) => el.scrollWidth));
-      const groupWidth = group.getBoundingClientRect().width;
+      const GAP = 8;
+      const itemWidth = Math.max(...children.map((el) => el.scrollWidth));
+      const containerWidth = group.getBoundingClientRect().width;
 
-      const ratio = maxWidth / groupWidth;
+      let itemsPerRow = 1;
 
-      let itemsPerRow = questionIndex;
       if (questionIndex === 0) {
-        if (ratio <= 0.2) itemsPerRow = 5;
-        else if (ratio <= 0.33) itemsPerRow = 3;
-        else if (ratio <= 0.5) itemsPerRow = 2;
-        else itemsPerRow = 1;
+        const reqWidthFor5 = itemWidth * 5 + GAP * 4;
+        const reqWidthFor3 = itemWidth * 3 + GAP * 2;
+        const reqWidthFor2 = itemWidth * 2 + GAP;
+
+        if (containerWidth >= reqWidthFor5) {
+          itemsPerRow = 5;
+        } else if (containerWidth >= reqWidthFor3) {
+          itemsPerRow = 3;
+        } else if (containerWidth >= reqWidthFor2) {
+          itemsPerRow = 2;
+        } else {
+          itemsPerRow = 1;
+        }
       }
 
       children.forEach((child) => {
