@@ -1,6 +1,6 @@
 {
   "name": "psedu-math",
-  "version": "1.0.51",
+  "version": "1.0.55",
   "type": "module",
   "main": "dist/index.cjs",
   "module": "dist/index.es.js",

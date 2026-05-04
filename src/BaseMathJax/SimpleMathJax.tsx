@@ -33,8 +33,7 @@ export const SimpleMathJax = ({ content }: Props) => {
       .replaceAll("\\cfrac", "\\displaystyle \\frac")
       .replaceAll("`", "")
       .replaceAll("_", "\\;")
-      .replace(/\[!.*?!\]/g, "\\;")
-      .replace(/\s+/g, "\\;")
+      .replace(/\[!(.*?)!]/g, "$1")
       .replaceAll("•", "x");
 
     ref.current.innerHTML = `[!${replaceContent}!]`.replace(
